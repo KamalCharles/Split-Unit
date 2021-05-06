@@ -6,8 +6,8 @@ import json
 locationfile = pd.read_csv('location.csv')
 accountfile = pd.read_csv('account.csv')
 
-split_location = locationfile.sort_values('FlexiLocUnit').groupby('FlexiLocUnit')
-split_account = accountfile.sort_values('FlexiAccUnit').groupby('FlexiAccUnit')
+split_location = locationfile.groupby('FlexiLocUnit')
+split_account = accountfile.groupby('FlexiAccUnit')
 
 newpath = 'units' 
 if not os.path.exists(newpath):
