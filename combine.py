@@ -3,6 +3,20 @@ import pandas as pd
 import os
 import json
 
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-dir", "--subdirectory", help="enter subdirectory name")
+
+params = parser.parse_args()
+
+subdir = params.subdirectory
+
+
+os.chdir(subdir)
+
+
 locationfile = pd.read_csv('location.csv')
 accountfile = pd.read_csv('account.csv')
 
